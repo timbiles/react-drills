@@ -10,6 +10,7 @@ class App extends Component {
       password: ''
     }
 
+    this.handleLogin = this.handleLogin.bind(this);
 
   }
 
@@ -19,6 +20,10 @@ class App extends Component {
 
   handleChange2(val){
     this.setState({password: val})
+  }
+
+  handleLogin(){
+    alert(`username: ${this.state.username} password: ${this.state.password}`);
   }
 
   render() {
@@ -31,10 +36,12 @@ class App extends Component {
         />
       <input
         placeholder='Password'
-        type='text'
-        onChange2={e=> this.handleChange(e.target.value)}
+        type='password'
+        onChange={e=> this.handleChange2(e.target.value)}
         />
-      <button>Login</button>
+      <button
+        onClick={this.handleLogin}
+      >Login</button>
       </div>
     );
   }
