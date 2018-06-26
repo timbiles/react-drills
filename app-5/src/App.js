@@ -6,8 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <a href="https://placeholder.com"><img src="http://via.placeholder.com/350x150"/>
-      </a>
+      <Image myImage={'https://uniquehunters.com/wp-content/uploads/2015/08/Bird-Dog-Mashups-24-1024x856.jpg'} />
       </div>
     );
   }
