@@ -1,40 +1,47 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 
-class App extends Component {
+class App extends Component{
   constructor(){
     super();
 
-    this.state ={
-      userInput: '',
-      movies: [
-        'Pulp Fiction',
-        'The Grand Budapest Hotel',
-        'Dodgeball',
-        'Star Wars',
-        'Harry Potter'
-      ]
+    this.state = {
+      fruits: [
+        'apple',
+        'bananas',
+        'kiwi',
+        'strawberry',
+        'mango',
+        'watermelon'
+      ],
+      userInput: ''
     }
-
   }
-      handleChange(val) {
-        this.setState({userInput: val})
 
+  handleChange(val){
+    this.setState({userInput: val})
   }
-  render() {
-    const movieList = this.state.movies.filter( (e,i) => {
+
+  render(){
+    const fruities = this.state.fruits.filter((e,i)=>{
       return e.includes(this.state.userInput)
-    }).map( (e,i) => {
-      return <h2 key={i}>{e}</h2>
+    }).map((e,i) =>{
+      return <h2 key={i} >{e}</h2>
     })
 
-    return (
-      <div className="App">
-        <input placeholder='Type a movie here!!' type='text' onChange={ e => this.handleChange(e.target.value)}/>
-        {movieList}
+    return(
+      <div className='App'>
+        <input
+          type='text'
+          placeholder='Type something in me!'
+          onChange={e=> this.handleChange(e.target.value)}
+        />
+        <h2>{fruities}</h2>     
       </div>
-    );
+    )
   }
+
 }
 
 export default App;
+
